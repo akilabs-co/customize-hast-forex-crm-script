@@ -1,13 +1,7 @@
-//----  EN Text
-if(getLang()===`gb`){ 
-   //--1. HAST FOREX My Page Login
-    setNewContent(".login-body > .login-title",  "HAST FOREX My Page Login"); 
-}
-//--- JP Text
-if(getLang()===`jp`){
-    //--1. HAST FOREXマイページログイン
-     setNewContent(".login-body > .login-title",  "HAST FOREXマイページログイン"); 
-}
+
+//--1. HAST FOREX My Page Login | HAST FOREXマイページログイン
+setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREX My Page Login"); 
+setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREXマイページログイン"); 
 
 //---- FUNCTIONS
 function getLang(){
@@ -16,10 +10,23 @@ function getLang(){
        const lang = url.split("/")[3].split("?")[0].split(".png")[0];
        return lang;
 }
-function setNewContent(selector, newContent){
-    const element = $(selector);
-    const textToReplace = element.text();
-     const newText = textToReplace.replace(textToReplace , newContent);
-    console.log(newText);
-    element.text(newText);
+function setNewContent(lang, selector, newContent){
+    switch(lang){
+       case `gb`:
+         const element = $(selector);
+         const textToReplace = element.text();
+         const newText = textToReplace.replace(textToReplace , newContent);
+         console.log(newText);
+         element.text(newText);
+         break;
+       case `jp`:
+         const element = $(selector);
+         const textToReplace = element.text();
+         const newText = textToReplace.replace(textToReplace , newContent);
+         console.log(newText);
+         element.text(newText);
+         break;
+       default:         
+         break;
+    }
 }
