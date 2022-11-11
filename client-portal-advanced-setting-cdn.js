@@ -25,5 +25,3 @@ function setNewContent(lang, selector, newContent){
   const newText = textToReplace.replace(textToReplace , newContent);  
   element.text(newText);
 }
-
-<script src="https://raw.githubusercontent.com/akilabs-co/customize-hast-forex-crm-script/master/client-portal-advanced-setting-cdn.js"></script>
