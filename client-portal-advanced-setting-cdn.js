@@ -6,25 +6,17 @@ setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREXマイペー�
 //---- FUNCTIONS
 function getLang(){
 	const element = $("span.flag")[0].attributes[1].nodeValue;
-        const url = element.split("//")[1];
-       const lang = url.split("/")[3].split("?")[0].split(".png")[0];
-       return lang;
+    const url = element.split("//")[1];
+    const lang = url.split("/")[3].split("?")[0].split(".png")[0];
+    return lang;
 }
 function setNewContent(lang, selector, newContent){
     switch(lang){
        case `gb`:
-         const element = $(selector);
-         const textToReplace = element.text();
-         const newText = textToReplace.replace(textToReplace , newContent);
-         console.log(newText);
-         element.text(newText);
+         $(selector).text($(selector).text().replace($(selector).text() , newContent));
          break;
        case `jp`:
-         const element = $(selector);
-         const textToReplace = element.text();
-         const newText = textToReplace.replace(textToReplace , newContent);
-         console.log(newText);
-         element.text(newText);
+          $(selector).text($(selector).text().replace($(selector).text() , newContent));
          break;
        default:         
          break;
