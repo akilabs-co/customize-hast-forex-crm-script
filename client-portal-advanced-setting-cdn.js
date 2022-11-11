@@ -1,7 +1,15 @@
-
-//--1. HAST FOREX My Page Login | HAST FOREXマイページログイン
-setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREX My Page Login"); 
-setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREXマイページログイン"); 
+switch(getLang()){
+  case `gb`:
+    //--1. HAST FOREX My Page Login
+    setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREX My Page Login"); 
+    break;
+  case `jp`:
+    //--1. HAST FOREXマイページログイン
+    setNewContent(getLang(), ".login-body > .login-title",  "HAST FOREXマイページログイン");
+    break;
+  default:
+    break;
+} 
 
 //---- FUNCTIONS
 function getLang(){
@@ -15,8 +23,7 @@ function setNewContent(lang, selector, newContent){
   const element = $(selector);
   const textToReplace = element.text();
   const newText = textToReplace.replace(textToReplace , newContent);  
-
-  if(lang===`gb`) element.text(newText);
-  if(lang===`jp`) element.text(newText);
-
+  element.text(newText);
 }
+
+<script src="https://raw.githubusercontent.com/akilabs-co/customize-hast-forex-crm-script/master/client-portal-advanced-setting-cdn.js"></script>
